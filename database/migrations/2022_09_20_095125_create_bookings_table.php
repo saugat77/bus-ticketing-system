@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('booking_id');
+            $table->integer('customer_id');
+            $table->integer('bus_id');
+            $table->float('booking_price');
+            $table->date('booking_date');
             $table->timestamps();
         });
     }

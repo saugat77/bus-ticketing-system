@@ -14,7 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('operators', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('operator_id');
+            $table->string('operator_name');
+            $table->string('operator_email');
+            $table->string('operator_phone');
+            $table->string('operator_address');
+            $table->string('operator_logo');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

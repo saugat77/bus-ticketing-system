@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sub_destinations', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('sub_destination_id');
+            $table->string('sub_destination_name');
+            $table->string('sub_destination_code');
+            $table->integer('destination_id');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
